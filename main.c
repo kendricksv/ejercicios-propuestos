@@ -1,28 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
-/*escribe un programa que solicite al usuario un angulo en grados y luego muestre los valores del seno, coseno y tangente de ese angulo*/
+/*Escribe un programa que solicite al usuario un numero decimal y luego muestre el valor redondeado hacia arriba, hacia abajo y al entero mas cercano*/
 
 int main(){
-    double angulo;
-    printf("introducir angulo: ");
-    scanf("%if",&angulo);
+    double numero;
+    printf("introducir numero decimal: ");
+    scanf("%if", &numero);
 
-  //se convierte el angulo a radianes ya que las funciones trigonometricas en c trabajan con radianes//
-    double anguloradianes = angulo*
-    M_PI/180.0;
+    double redondeoArriba = ceil(numero);
+    double redondeoAbajo = floor(numero);
+    double redondeoCentrocercano = round(numero);
 
-    double seno = sin(anguloradianes);
-    double coseno = cos(anguloradianes);
-    double tangente = tan(anguloradianes);
-
-    printf("seno:%.3if\n", seno);
-    printf("coseno:%.3if\n", coseno);
-    printf("tangente:%.3if\n", tangente);
+    printf("valor redondeado hacia arriba: %.2if\n", redondeoArriba);
+    printf("valor redondeado hacia abajo: %.2if\n", redondeoAbajo);
+    printf("valor redondeado al entero mas cercano: %.2if\n", redondeoCentrocercano);
 
     return 0;
-    }
 
-
-
-
+}
